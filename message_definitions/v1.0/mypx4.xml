@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<mavlink>
+
+    <include>common.xml</include>
+    <dialect>3</dialect>
+
+    <enums>
+    	<enum name="ESTIMATOR_CONTROL_CMD">
+    		<description>Available commands for controlling the PX4 estimator</description>
+    		<entry value="0" name="ESTIMATOR_CONTROL_STOP_DAEMON"/>
+    		<entry value="1" name="ESTIMATOR_CONTROL_START_EKF2"/>
+    		<entry value="2" name="ESTIMATOR_CONTROL_STOP_EKF2"/>
+    		<entry value="3" name="ESTIMATOR_CONTROL_REBOOT_EKF2"/>
+    	</enum>
+    </enums>
+
+    <messages>
+        <message id="999" name="ESTIMATOR_CONTROL_MSG">
+		<description>Control commands for the PX4 estimator module</description>
+		<field type="uint8_t" name="target_system">System ID</field>
+      		<field type="uint8_t" name="target_component">Component ID</field>
+      		<field type="uint8_t" name="command" enum="ESTIMATOR_CONTROL_CMD">Command</field>
+	</message>
+    </messages>
+
+</mavlink>
