@@ -24,3 +24,4 @@ pymavlink.egg-info/
 .tags*
 *.pyc
 include/mavlink/v1.0
+!/generated_libraries/*
